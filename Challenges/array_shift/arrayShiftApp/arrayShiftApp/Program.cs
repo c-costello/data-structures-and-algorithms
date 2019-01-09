@@ -8,8 +8,7 @@ namespace arrayShiftApp
         {
             Console.WriteLine("Hello World!");
             int[] arr = { 1, 2, 3, 4 };
-            int[] arrOne = { 7, 8, 9, 10, 11 };
-            Console.WriteLine(String.Join(",", ArrayShift(arrOne, 5)));
+            Console.WriteLine(String.Join(",", ArrayShift(arr, 5)));
         }
         public static int[] ArrayShift(int[] arr, int num)
         {
