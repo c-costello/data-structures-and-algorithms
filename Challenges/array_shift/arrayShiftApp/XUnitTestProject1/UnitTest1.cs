@@ -30,5 +30,13 @@ namespace XUnitTestProject1
             Assert.Equal(returnedArr, Program.ArrayShift(givenArr, 5));
         }
 
+        [Fact]
+        public void canInsertWithExNumbers()
+        {
+            int[] givenArr = { 4, 8, 15, 23, 42 };
+            int[] returnedArr = { 4, 8, 16, 15, 23, 42 };
+            Assert.Equal(returnedArr, Program.ArrayShift(givenArr, 16));
+        }
+
     }
 }
