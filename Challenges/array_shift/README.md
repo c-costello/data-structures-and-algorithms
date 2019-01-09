@@ -12,4 +12,4 @@ Write a function called insertShiftArray which takes in an array and the value t
 
 ## Solution
 
-![Whiteboard](../../Assets/whiteboard_02.PNG)
+![Whiteboard](../../Assets/whiteboard_02.JPG)
