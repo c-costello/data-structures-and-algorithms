@@ -4,7 +4,7 @@
 Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
 
 ## Approach & Efficiency
--Space and Time:
+- Space and Time:
 	- Time: O(n) - Our for loop iterates through the entire array
 	- Space: O(n) - We had to create a new array
 - Approach:
