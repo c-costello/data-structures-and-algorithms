@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arrayShiftApp", "arrayShiftApp\arrayShiftApp.csproj", "{54F88F1C-8EF9-4C69-A643-34BC1211685B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54F88F1C-8EF9-4C69-A643-34BC1211685B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54F88F1C-8EF9-4C69-A643-34BC1211685B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54F88F1C-8EF9-4C69-A643-34BC1211685B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54F88F1C-8EF9-4C69-A643-34BC1211685B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD2868DE-67FB-4781-921B-51E4902658F2}
+	EndGlobalSection
+EndGlobal
