@@ -22,6 +22,13 @@ namespace XUnitTestProject1
             Assert.Equal(returnedArr, Program.ArrayShift(givenArr, 5));
 
         }
+        [Fact]
+        public void canInsertWith12Numbers()
+        {
+            int[] givenArr = { 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 };
+            int[] returnedArr = { 12, 13, 14, 15, 16, 17, 5, 18, 19, 20, 21, 22, 23 };
+            Assert.Equal(returnedArr, Program.ArrayShift(givenArr, 5));
+        }
 
     }
 }
