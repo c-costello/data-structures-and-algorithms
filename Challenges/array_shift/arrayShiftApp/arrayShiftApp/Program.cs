@@ -2,15 +2,16 @@
 
 namespace arrayShiftApp
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             int[] arr = { 1, 2, 3, 4 };
-            Console.WriteLine(String.Join(",", ArrayShift(arr, 5)));
+            int[] arrOne = { 7, 8, 9, 10, 11 };
+            Console.WriteLine(String.Join(",", ArrayShift(arrOne, 5)));
         }
-        static int[] ArrayShift(int[] arr, int num)
+        public static int[] ArrayShift(int[] arr, int num)
         {
             int arrLength = arr.Length;
             int arrMidpoint = arrLength / 2;
