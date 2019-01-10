@@ -10,25 +10,16 @@ namespace BinarySearchTest
         [Fact]
         public void CanReturnNegativeOne()
         {
-            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int num = 3;
+            int[] arr = { 1, 2, 3, 4, 5};
+            int num = 11;
             Assert.Equal(-1, Program.BinarySearch(arr, num));
         }
         [Fact]
-        public void CanReturnArrayMidpoint()
+        public void CanReturnMidpoint()
         {
-            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int num = 5;
-            Assert.Equal(6, Program.BinarySearch(arr, num));
-
-        }
-        [Fact]
-        public void CanReturnIndex2()
-        {
-            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] arr = { 1, 2, 3, 4, 5};
             int num = 3;
             Assert.Equal(2, Program.BinarySearch(arr, num));
-
         }
     }
 }
