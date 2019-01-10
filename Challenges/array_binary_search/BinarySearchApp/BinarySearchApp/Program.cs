@@ -20,25 +20,41 @@ namespace BinarySearchApp
             for (int i = 0; i < arr.Length; i++)
             {
 
-            Console.WriteLine("arrMidpoint: " + arrMidpoint);
-            if (arr[arrMidpoint] == num)
-            {
-                Console.WriteLine("num: " + num);
-                return arrMidpoint;
-            } else if (num < arr[arrMidpoint])
-            {
-                Console.WriteLine("Something is happening");
-                arrMidpoint = (arrMidpoint + 1)/ 2;
-                Console.WriteLine("new midpoint :" + arrMidpoint);
-                Console.WriteLine("arr" + arr[arrMidpoint]);
+                Console.WriteLine("arrMidpoint: " + arrMidpoint);
+                if (arrMidpoint > arr.Length)
+                {
+                    return -1;
+                }
+                if (arr[arrMidpoint] == num)
+                {
+                    if (arrMidpoint > arr.Length)
+                    {
+                        return -1;
+                    }
+                    Console.WriteLine("num: " + num);
+                    return arrMidpoint;
+                } else if (num < arr[arrMidpoint])
+                {
+                    Console.WriteLine("Something is happening");
+                    arrMidpoint = (arrMidpoint + 1)/ 2;
+                    if (arrMidpoint > arr.Length)
+                    {
+                        return -1;
+                    }
+                    Console.WriteLine("new midpoint :" + arrMidpoint);
+                    Console.WriteLine("arr" + arr[arrMidpoint]);
                 
-            } else if (num > arr[arrMidpoint])
-            {
-                arrMidpoint = (arrMidpoint) + (arrMidpoint / 2);
-                Console.WriteLine("new midpoint 2:" + arrMidpoint);
-                Console.WriteLine("arr" + arr[arrMidpoint]);
+                } else if (num > arr[arrMidpoint])
+                {
+                    arrMidpoint = (arrMidpoint) + (arrMidpoint / 2);
+                    if (arrMidpoint > arr.Length)
+                    {
+                        return -1;
+                    }
+                    Console.WriteLine("new midpoint 2:" + arrMidpoint);
+                    Console.WriteLine("arr" + arr[arrMidpoint]);
                 
-            }
+                }
             }
             
                 
