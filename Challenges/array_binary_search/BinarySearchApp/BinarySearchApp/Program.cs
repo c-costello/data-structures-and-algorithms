@@ -35,6 +35,10 @@ namespace BinarySearchApp
                     return arrMidpoint;
                 } else if (num < arr[arrMidpoint])
                 {
+                    if (arrMidpoint == 1)
+                    {
+                        arrMidpoint = 0;
+                    } 
                     Console.WriteLine("Something is happening");
                     arrMidpoint = (arrMidpoint + 1)/ 2;
                     if (arrMidpoint > arr.Length)
