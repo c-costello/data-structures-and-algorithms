@@ -19,7 +19,15 @@ namespace BinarySearchTest
         {
             int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int num = 5;
-            Assert.Equal(5, Program.BinarySearch(arr, num));
+            Assert.Equal(6, Program.BinarySearch(arr, num));
+
+        }
+        [Fact]
+        public void CanReturnIndex2()
+        {
+            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int num = 3;
+            Assert.Equal(2, Program.BinarySearch(arr, num));
 
         }
     }
