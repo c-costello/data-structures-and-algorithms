@@ -22,6 +22,11 @@ namespace fibonacci_sequence_Test
         {
             Assert.Equal(12586269025, Program.FindNthTerm(50));
         }
+        [Fact]
+        public void canReturnFirstTerm()
+        {
+            Assert.Equal(1, Program.FindNthTerm(1));
+        }
 
     }
 }
