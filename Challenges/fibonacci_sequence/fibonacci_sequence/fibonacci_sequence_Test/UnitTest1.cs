@@ -11,5 +11,11 @@ namespace fibonacci_sequence_Test
         {
             Assert.Equal(5, Program.FindNthTerm(5));
         }
+
+        [Fact]
+        public void canReturnTenthTerm()
+        {
+            Assert.Equal(55, Program.FindNthTerm(10));
+        }
     }
 }
