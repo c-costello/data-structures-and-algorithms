@@ -15,10 +15,16 @@ namespace fibonacci_sequence
             fibArr[0] = 0;
             fibArr[1] = 1;
             long nthTerm = 0;
-            for (int i = 2; i < n + 1; i++)
+            if (n == 0 || n == 1)
             {
-                fibArr[i] = fibArr[i - 1] + fibArr[i - 2];
-                nthTerm = fibArr[i];
+                nthTerm = n;
+            } else
+            {
+                for (int i = 2; i < n + 1; i++)
+                {
+                    fibArr[i] = fibArr[i - 1] + fibArr[i - 2];
+                    nthTerm = fibArr[i];
+                }
             }
             return nthTerm;
         }
