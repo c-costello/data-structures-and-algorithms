@@ -2,14 +2,14 @@
 
 namespace fibonacci_sequence
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             Console.WriteLine(FindNthTerm(5));
         }
-        static long FindNthTerm(int n)
+        public static long FindNthTerm(int n)
         {
             long[] fibArr = new long[n + 1];
             fibArr[0] = 0;
