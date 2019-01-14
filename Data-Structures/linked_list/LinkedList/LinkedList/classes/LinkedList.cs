@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LinkedList.classes
 {
-    public class LinkedList
+    public class LList
     {
         public Node Head { get; set; }
         public Node Current { get; set; }
@@ -27,6 +27,7 @@ namespace LinkedList.classes
                 {
                     return true;
                 }
+                Current = Current.Next;
             }
             if (Current.Value == value)
             {
@@ -41,9 +42,11 @@ namespace LinkedList.classes
         //print
         public void Print()
         {
+            Current = Head;
             while(Current.Next != null)
             {
                 Console.WriteLine(Current.Value);
+                Current = Current.Next;
             }
             Console.WriteLine(Current.Value);
         }

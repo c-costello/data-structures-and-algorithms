@@ -13,4 +13,5 @@ namespace LinkedList.classes
         {
             Value = value;
         }
+    }
 };
