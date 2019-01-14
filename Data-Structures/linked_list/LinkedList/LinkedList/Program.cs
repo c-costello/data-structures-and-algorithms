@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LinkedLists
+namespace LinkedList
 {
     class Program
     {
