@@ -37,6 +37,16 @@ namespace LinkedList.classes
                 return false;
             }
         }
+
+        //print
+        public void Print()
+        {
+            while(Current.Next != null)
+            {
+                Console.WriteLine(Current.Value);
+            }
+            Console.WriteLine(Current.Value);
+        }
     }
 
 }
