@@ -64,5 +64,19 @@ namespace LinkedListTests
             Assert.Equal(expectedValue, list.Head.Value);
 
         }
+
+        [Fact]
+        public void CanFindIncludedNumber()
+        {
+            LList list = new LList();
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+            list.Insert(7);
+
+            Assert.True(list.Includes(6));
+        }
     }
+
+
 }
