@@ -49,5 +49,20 @@ namespace LinkedListTests
             Assert.Equal(expectedListValues, actualListValues);
             
         }
+
+        [Fact]
+        public void InsertsNewNodeIntoHead()
+        {
+            LList list = new LList();
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+            list.Insert(7);
+
+            int expectedValue = 7;
+
+            Assert.Equal(expectedValue, list.Head.Value);
+
+        }
     }
 }
