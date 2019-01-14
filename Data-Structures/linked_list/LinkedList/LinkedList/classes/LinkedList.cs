@@ -17,6 +17,26 @@ namespace LinkedList.classes
             Head = newNode;
         }
 
+        //includes
+        public bool Includes(int value)
+        {
+            Current = Head;
+            while(Current.Next != null)
+            {
+                if (Current.Value == value)
+                {
+                    return true;
+                }
+            }
+            if (Current.Value == value)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
 }
