@@ -76,6 +76,19 @@ namespace LinkedListTests
 
             Assert.True(list.Includes(6));
         }
+        [Fact]
+        public void ReturnsFalseIfNumberIsNotIncluded()
+        {
+            LList list = new LList();
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+            list.Insert(7);
+
+            Assert.False(list.Includes(100));
+
+        }
+
     }
 
 
