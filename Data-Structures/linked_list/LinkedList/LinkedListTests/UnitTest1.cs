@@ -10,8 +10,19 @@ namespace LinkedListTests
         [Fact]
         public void WillCreateAList()
         {
-            Assert.NotNull(Program.CreateAList());
+            LList list = new LList();
+            Assert.NotNull(list);
         }
+
+        [Fact]
+        public void CreatedListHeadIsNull()
+        {
+            LList list = new LList();
+
+
+            Assert.Null(list.Head);
+        }
+
 
         [Fact]
         public void CanInsertOneNumbers()
@@ -23,7 +34,7 @@ namespace LinkedListTests
                 Current = null,
                 Head = new Node(5) { Next = null, Value = 5 }
             };
-            Assert.Equal(list.Head.Value, expectedList.Head.Value);
+            Assert.Equal(expectedList.Head.Value, list.Head.Value);
         }
 
         [Fact] 
@@ -86,6 +97,19 @@ namespace LinkedListTests
             list.Insert(7);
 
             Assert.False(list.Includes(100));
+
+        }
+
+        [Fact]
+        public void WillReturnTrueIfHeadValueIsTheCheckedValue()
+        {
+            LList list = new LList();
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+            list.Insert(7);
+
+            Assert.True(list.Includes(7));
 
         }
 
