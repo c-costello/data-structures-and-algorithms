@@ -25,5 +25,29 @@ namespace LinkedListTests
             };
             Assert.Equal(list.Head.Value, expectedList.Head.Value);
         }
+
+        [Fact] 
+        public void CanInsertThreeNumbers()
+        {
+            LList list = new LList();
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+
+            int[] expectedListValues = { 6, 5, 4 };
+            int[] actualListValues = new int[3];
+            int i = 0;
+            list.Current = list.Head;
+            while (list.Current.Next != null)
+            {
+                actualListValues[i] = list.Current.Value;
+                list.Current = list.Current.Next;
+                i++;
+            }
+            actualListValues[2] = list.Current.Value;
+
+            Assert.Equal(expectedListValues, actualListValues);
+            
+        }
     }
 }
