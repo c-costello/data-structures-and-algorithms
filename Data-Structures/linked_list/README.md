@@ -20,3 +20,12 @@ Implement a Singly Linked List Data Structure.
 	-Print:
 		- Time: O(n) - We are running through the entire List
 		- Space: O(1) - We do not need to create any new objects
+	-Append:
+		- Time: O(n) - We are running through the entire list
+		- Space: O(1) - We are only creating one new thing
+	-InsertAfter:
+		- Time: O(n) - We are running through the entire list
+		- Space: O(1) - We are only creating one new thing
+	-InsertBefore:
+		- Time: O(n) - We are running through the entire list
+		- Space: O(1) - We are only creating one new thing
