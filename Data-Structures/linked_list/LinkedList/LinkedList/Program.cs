@@ -13,8 +13,12 @@ namespace LinkedList
 
         public static LList CreateAList()
         {
-            LList list = new LList();
-            return list;
+            LList myList = new LList();
+            myList.Append(4);
+
+            myList.Print();
+
+            return myList;
 
 
         }

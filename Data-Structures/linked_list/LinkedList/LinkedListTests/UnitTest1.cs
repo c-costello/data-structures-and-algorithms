@@ -113,6 +113,26 @@ namespace LinkedListTests
 
         }
 
+        [Fact]
+        public void CanAppendValueToEndOfList()
+        {
+            LList list = new LList();
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+            list.Insert(7);
+            list.Append(0);
+
+            int expectedLastValue = 0;
+            list.Current = list.Head;
+            while (list.Current.Next != null)
+            {
+                list.Current = list.Current.Next;
+            }
+            int actualLastValue = list.Current.Value;
+            Assert.Equal(expectedLastValue, actualLastValue);
+        }
+
     }
 
 
