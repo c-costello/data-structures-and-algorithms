@@ -42,13 +42,73 @@ namespace LinkedList.classes
         //print
         public void Print()
         {
-            Current = Head;
-            while(Current.Next != null)
+            if (Head == null)
             {
+                Console.WriteLine("There is nothing in this List");
+            } 
+            else
+            {
+                Current = Head;
+                while(Current.Next != null)
+                {
+                    Console.WriteLine(Current.Value);
+                    Current = Current.Next;
+                }
                 Console.WriteLine(Current.Value);
+            }
+        }
+
+        //append
+        public void Append(int value)
+        {
+            if (Head == null)
+            {
+                Insert(value);
+            }
+            Current = Head;
+            while (Current.Next != null)
+            {
                 Current = Current.Next;
             }
-            Console.WriteLine(Current.Value);
+            Node newNode = new Node(value);
+            Current.Next = newNode;
+        }
+
+        //insert before
+        public void InsertBefore(int value, int newValue)
+        {
+            Current = Head;
+            while (Current.Next != null )
+            {
+                if (Current.Next.Value == value)
+                {
+                    Node newNode = new Node(newValue);
+                    newNode.Next = Current.Next;
+                    Current.Next = newNode;
+                    return;
+                }
+                Current = Current.Next;
+            }
+            
+        }
+
+
+        //insert after
+        public void InsertAfter(int value, int newValue)
+        {
+            Current = Head;
+            while (Current.Next != null)
+            {
+                if (Current.Value == value)
+                {
+                    Node newNode = new Node(newValue);
+                    newNode.Next = Current.Next;
+                    Current.Next = newNode;
+                    return;
+                }
+                Current = Current.Next;
+            }
+
         }
     }
 
