@@ -132,6 +132,28 @@ namespace LinkedListTests
             int actualLastValue = list.Current.Value;
             Assert.Equal(expectedLastValue, actualLastValue);
         }
+        [Fact]
+        public void CanInsertValueBeforeNode()
+        {
+            LList list = new LList();
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+            list.InsertBefore(5, 7);
+            int expectedValue = 7;
+            int actualValue = 0;
+            while (list.Current.Next != null)
+            {
+                if (list.Current.Next.Value == 5)
+                {
+                    actualValue = list.Current.Value;
+                    break;
+                }
+                list.Current = list.Current.Next;
+            }
+
+            Assert.Equal(expectedValue, actualValue);           
+        }
 
     }
 
