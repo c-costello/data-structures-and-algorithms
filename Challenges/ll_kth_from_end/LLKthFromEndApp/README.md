@@ -16,5 +16,5 @@ Given a Link List, list, and an integer, k, return the value of the node kth fro
 
 
 ##Solution
-![WhiteBoard 1](whiteboard_01.jpg)
-![WhiteBoard 2](whiteboard_2.jpg)
+![WhiteBoard 1](assets/whiteboard_01.jpg)
+![WhiteBoard 2](assets/whiteboard_02.jpg)
