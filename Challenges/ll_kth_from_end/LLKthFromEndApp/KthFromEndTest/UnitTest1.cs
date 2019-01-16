@@ -21,5 +21,18 @@ namespace KthFromEndTest
 
         }
 
+        [Fact]
+        public void WillReturn3rdValueFromEndReversed()
+        {
+            LList list = new LList();
+            list.Insert(3);
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+            list.Insert(7);
+
+            Assert.Equal(5, Program.FindKthFromEnd(3, list));
+        }
+
     }
 }
