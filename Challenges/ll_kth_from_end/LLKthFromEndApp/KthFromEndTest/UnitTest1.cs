@@ -34,5 +34,18 @@ namespace KthFromEndTest
             Assert.Equal(5, Program.FindKthFromEnd(3, list));
         }
 
+
+        [Fact]
+        public void WillReturnValueFromLongList()
+        {
+            LList list = new LList();
+            for (int i = 1; i < 101; i++)
+            {
+                list.Insert(i);
+            }
+
+            Assert.Equal(50, Program.FindKthFromEnd(50, list));
+        }
+
     }
 }
