@@ -41,11 +41,24 @@ namespace KthFromEndTest
             LList list = new LList();
             for (int i = 1; i < 101; i++)
             {
-                list.Insert(i);
+                list.Insert(100-i);
             }
 
             Assert.Equal(50, Program.FindKthFromEnd(50, list));
         }
+
+        [Fact]
+        public void WillReturnValueFromLongListReverse()
+        {
+            LList list = new LList();
+            for (int i = 0; i < 100; i++)
+            {
+                list.Insert(100 - i);
+            }
+
+            Assert.Equal(50, Program.FindKthFromEnd(50, list));
+        }
+
 
     }
 }
