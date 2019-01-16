@@ -56,7 +56,7 @@ namespace KthFromEndTest
                 list.Insert(100 - i);
             }
 
-            Assert.Equal(50, Program.FindKthFromEnd(50, list));
+            Assert.Equal(51, Program.FindKthFromEnd(50, list));
         }
 
 
