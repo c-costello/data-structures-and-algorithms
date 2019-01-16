@@ -97,17 +97,25 @@ namespace LinkedList.classes
         /// <param name="newValue">the value of the node being created and attached</param>
         public void InsertBefore(int value, int newValue)
         {
-            Current = Head;
-            while (Current.Next != null )
+            if (Head.Next == null)
             {
-                if (Current.Next.Value == value)
+                Insert(newValue);
+            }
+            else
+            {
+                Current = Head;
+                while (Current.Next != null )
                 {
-                    Node newNode = new Node(newValue);
-                    newNode.Next = Current.Next;
-                    Current.Next = newNode;
-                    return;
+                    if (Current.Next.Value == value)
+                    {
+                        Node newNode = new Node(newValue);
+                        newNode.Next = Current.Next;
+                        Current.Next = newNode;
+                        return;
+                    }
+                    Current = Current.Next;
                 }
-                Current = Current.Next;
+
             }
             
         }
