@@ -23,7 +23,7 @@ namespace LinkedListTests
             Assert.Null(list.Head);
         }
 
-
+        //insert tests
         [Fact]
         public void CanInsertOneNumbers()
         {
@@ -76,6 +76,8 @@ namespace LinkedListTests
 
         }
 
+
+        //includes tests
         [Fact]
         public void CanFindIncludedNumber()
         {
@@ -113,6 +115,8 @@ namespace LinkedListTests
 
         }
 
+
+        //Append tests
         [Fact]
         public void CanAppendValueToEndOfList()
         {
@@ -132,6 +136,9 @@ namespace LinkedListTests
             int actualLastValue = list.Current.Value;
             Assert.Equal(expectedLastValue, actualLastValue);
         }
+
+
+        //InsertBefore tests
         [Fact]
         public void CanInsertValueBeforeNode()
         {
@@ -154,6 +161,8 @@ namespace LinkedListTests
 
             Assert.Equal(expectedValue, actualValue);           
         }
+
+        //Insert After tests
         [Fact]
         public void CanInsertAfterNode()
         {
