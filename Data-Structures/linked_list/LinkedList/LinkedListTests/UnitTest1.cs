@@ -137,6 +137,23 @@ namespace LinkedListTests
             Assert.Equal(expectedLastValue, actualLastValue);
         }
 
+        [Fact]
+        public void CanAppendToAnEmptyList()
+        {
+            LList list = new LList();
+            list.Append(5);
+            Assert.Equal(5, list.Head.Value);
+        }
+        [Fact]
+        public void CanAppendToListWithOneNode()
+        {
+            LList list = new LList();
+            list.Insert(1);
+            list.Append(5);
+            Assert.Equal(5, list.Head.Next.Value);
+
+        }
+
 
         //InsertBefore tests
         [Fact]
