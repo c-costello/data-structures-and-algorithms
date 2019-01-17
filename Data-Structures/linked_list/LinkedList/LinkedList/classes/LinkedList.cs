@@ -114,7 +114,7 @@ namespace LinkedList.classes
                         return;
                     }
                     Current = Current.Next;
-                }
+                } 
 
             }
             
@@ -140,6 +140,10 @@ namespace LinkedList.classes
                 }
                 Current = Current.Next;
             }
+            Node node = new Node(newValue);
+            node.Next = Current.Next;
+            Current.Next = node;
+            return;
 
         }
 

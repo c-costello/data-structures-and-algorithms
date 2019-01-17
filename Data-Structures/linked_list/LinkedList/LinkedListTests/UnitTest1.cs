@@ -224,6 +224,34 @@ namespace LinkedListTests
             Assert.Equal(expectedValue, actualValue);
         }
 
+        [Fact]
+        public void CanInsertAfterLastNode()
+        {
+            LList list = new LList();
+            list.Insert(3);
+            list.Insert(2);
+            list.InsertAfter(3, 4);
+            int expected = 4;
+            Node current = list.Head.Next.Next;
+            int actual = current.Value;
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void CanInsertAfterHead()
+        {
+            LList list = new LList();
+            list.Insert(3);
+            list.Insert(2);
+            list.InsertAfter(2, 4);
+            int expected = 4;
+            Node current = list.Head.Next;
+            int actual = current.Value;
+
+            Assert.Equal(expected, actual);
+        }
+
     }
 
 
