@@ -3,7 +3,7 @@ using System;
 
 namespace ll_merge
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -28,7 +28,7 @@ namespace ll_merge
         /// <param name="listOne">a link list</param>
         /// <param name="listTwo">another link list</param>
         /// <returns>an altered listOne link list</returns>
-        static LList Merge (LList listOne, LList listTwo)
+        public static LList Merge (LList listOne, LList listTwo)
         {
             Node Current1 = listOne.Head;
             Node Current2 = listTwo.Head;
