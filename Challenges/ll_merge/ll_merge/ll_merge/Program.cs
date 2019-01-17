@@ -22,7 +22,12 @@ namespace ll_merge
 
             Merge(listOne, listTwo);
         }
-
+        /// <summary>
+        /// Takes in two link lists and zips them together
+        /// </summary>
+        /// <param name="listOne">a link list</param>
+        /// <param name="listTwo">another link list</param>
+        /// <returns>an altered listOne link list</returns>
         static LList Merge (LList listOne, LList listTwo)
         {
             Node Current1 = listOne.Head;
