@@ -6,3 +6,4 @@
 04. [Challenge: Extra Credit](Challenges/fibonacci_sequence)
 05. [Data Structure: Linked Lists](Data-Structures/linked_list)
 07. [Challenge: Kth from the End](Challenges/ll_kth_from_end)
+08. [Challenge: Link List Merge](Challenges/ll_merge)
