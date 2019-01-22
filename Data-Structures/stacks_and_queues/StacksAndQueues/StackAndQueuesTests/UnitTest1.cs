@@ -209,5 +209,14 @@ namespace StackAndQueuesTests
             Assert.Null(queue.Front);
         }
 
+        [Fact]
+        public void CannotDequeueEmptyQueue()
+        {
+            Queue queue = new Queue();
+            Assert.Null(queue.Dequeue());
+
+
+        }
+
     }
 }

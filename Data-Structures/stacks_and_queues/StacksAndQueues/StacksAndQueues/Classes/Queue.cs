@@ -68,6 +68,11 @@ namespace StacksAndQueues
         /// <returns>Top node</returns>
         public Node Dequeue()
         {
+            if (Front == null)
+            {
+                Console.WriteLine("Your Queue is Empty! There's Nothing to Dequeue!");
+                return null;
+            }
             Node temp = Front;
             Front = Front.Next;
             temp.Next = null;
