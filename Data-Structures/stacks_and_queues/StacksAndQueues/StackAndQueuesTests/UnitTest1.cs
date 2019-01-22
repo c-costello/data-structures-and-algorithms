@@ -179,7 +179,7 @@ namespace StackAndQueuesTests
 
         //Dequeue 
         [Fact]
-        public void CanDequeueFullQueue()
+        public void CanDequeueFromFullQueue()
         {
             Node node = new Node(5);
             Queue queue = new Queue(node);
@@ -188,6 +188,25 @@ namespace StackAndQueuesTests
             queue.Enqueue(8);
 
             Assert.Equal(5, queue.Dequeue().Value);
+        }
+
+        [Fact]
+        public void CanDequeueFromQueueWithOneNode()
+        {
+            Node node = new Node(5);
+            Queue queue = new Queue(node);
+
+            Assert.Equal(5, queue.Dequeue().Value);
+
+        }
+
+        [Fact]
+        public void CanDequeueFromQueueWithOneTestTwo()
+        {
+            Node node = new Node(5);
+            Queue queue = new Queue(node);
+            queue.Dequeue();
+            Assert.Null(queue.Front);
         }
 
     }
