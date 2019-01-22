@@ -164,7 +164,6 @@ namespace StackAndQueuesTests
         {
             Queue queue = new Queue();
             queue.Enqueue(5);
-
             Assert.Equal(5, queue.Rear.Value);
         }
 
@@ -176,6 +175,19 @@ namespace StackAndQueuesTests
             queue.Enqueue(10);
 
             Assert.Equal(10, queue.Rear.Value);
+        }
+
+        //Dequeue 
+        [Fact]
+        public void CanDequeueFullQueue()
+        {
+            Node node = new Node(5);
+            Queue queue = new Queue(node);
+            queue.Enqueue(6);
+            queue.Enqueue(7);
+            queue.Enqueue(8);
+
+            Assert.Equal(5, queue.Dequeue().Value);
         }
 
     }
