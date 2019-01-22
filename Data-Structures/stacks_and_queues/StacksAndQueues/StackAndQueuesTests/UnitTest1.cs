@@ -147,6 +147,36 @@ namespace StackAndQueuesTests
             Queue queue = new Queue(node);
             Assert.Null(queue.Front);
         }
-            
+
+        //Enqueue tests
+        [Fact]
+        public void CanAddNodeToEmptyQueue()
+        {
+            Queue queue = new Queue();
+            Node node = new Node(5);
+            queue.Enqueue(node);
+
+            Assert.Equal(5, queue.Rear.Value);
+        }
+
+        [Fact]
+        public void CanAddValueToEmptyQueue()
+        {
+            Queue queue = new Queue();
+            queue.Enqueue(5);
+
+            Assert.Equal(5, queue.Rear.Value);
+        }
+
+        [Fact]
+        public void CanAddValueToOccupiedQueue()
+        {
+            Node node = new Node(5);
+            Queue queue = new Queue(node);
+            queue.Enqueue(10);
+
+            Assert.Equal(10, queue.Rear.Value);
+        }
+
     }
 }

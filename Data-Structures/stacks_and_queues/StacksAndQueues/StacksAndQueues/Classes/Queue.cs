@@ -38,6 +38,11 @@ namespace StacksAndQueues
         public void Enqueue(int value)
         {
             Node node = new Node(value);
+            if (Front == null)
+            {
+                Front = node;
+                Rear = node;
+            }
             Rear.Next = node;
             Rear = node;
         }
@@ -48,6 +53,11 @@ namespace StacksAndQueues
         /// <param name="node">Node</param>
         public void Enqueue(Node node)
         {
+            if (Front == null)
+            {
+                Front = node;
+                Rear = node;
+            }
             Rear.Next = node;
             Rear = node;
         }
