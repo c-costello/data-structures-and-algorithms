@@ -65,5 +65,16 @@ namespace StackAndQueuesTests
 
             Assert.Equal(10, stack.Top.Value);
         }
+
+        //pop tests
+        [Fact]
+        public void CanPopNode()
+        {
+            Node node = new Node(5);
+            Stack stack = new Stack(node);
+            stack.Push(6);
+            stack.Push(7);
+            Assert.Equal(7, stack.Pop().Value);
+        }
     }
 }
