@@ -112,7 +112,13 @@ namespace StackAndQueuesTests
             stack.Push(7);
             stack.Push(8);
             Assert.Equal(8, stack.Peek().Value);
+        }
 
+        [Fact]
+        public void EmptyStacksReturnNullWhenPeeked()
+        {
+            Stack stack = new Stack();
+            Assert.Null(stack.Peek());
         }
             
     }
