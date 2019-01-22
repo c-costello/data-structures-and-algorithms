@@ -55,5 +55,15 @@ namespace StackAndQueuesTests
 
             Assert.Equal(5, stack.Top.Value);
         }
+
+        [Fact]
+        public void CanAddValueToOccupiedStack()
+        {
+            Node node = new Node(5);
+            Stack stack = new Stack(node);
+            stack.Push(10);
+
+            Assert.Equal(10, stack.Top.Value);
+        }
     }
 }
