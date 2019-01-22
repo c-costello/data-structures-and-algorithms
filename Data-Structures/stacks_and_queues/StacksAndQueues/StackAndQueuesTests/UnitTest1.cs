@@ -26,5 +26,14 @@ namespace StackAndQueuesTests
 
             Assert.Equal(5, stack.Top.Value);
         }
+
+        [Fact]
+        public void CanCreateStackWithNullNode()
+        {
+            Node node = new Node(5);
+            node = null;
+            Stack stack = new Stack(node);
+            Assert.Null(stack.Top);
+        }
     }
 }
