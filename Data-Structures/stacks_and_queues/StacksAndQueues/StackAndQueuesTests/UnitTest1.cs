@@ -130,7 +130,14 @@ namespace StackAndQueuesTests
             Queue queue = new Queue();
 
             Assert.Null(queue.Front);
+        }
 
+        [Fact]
+        public void CanCreateQueueWithOneNode()
+        {
+            Node node = new Node(5);
+            Queue queue = new Queue(node);
+            Assert.Equal(5, queue.Front.Value);
         }
             
     }
