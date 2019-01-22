@@ -120,6 +120,18 @@ namespace StackAndQueuesTests
             Stack stack = new Stack();
             Assert.Null(stack.Peek());
         }
+
+        //Queue tests
+
+        ///Constructor tests
+        [Fact]
+        public void CanCreateEmptyQueue()
+        {
+            Queue queue = new Queue();
+
+            Assert.Null(queue.Front);
+
+        }
             
     }
 }

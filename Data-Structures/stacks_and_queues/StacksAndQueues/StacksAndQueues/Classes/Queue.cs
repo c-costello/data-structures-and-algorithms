@@ -65,7 +65,11 @@ namespace StacksAndQueues
             return temp;
         }
 
-        public Node Peak()
+        /// <summary>
+        /// Returns front node
+        /// </summary>
+        /// <returns>Front</returns>
+        public Node Peek()
         {
             return Front;
         }
