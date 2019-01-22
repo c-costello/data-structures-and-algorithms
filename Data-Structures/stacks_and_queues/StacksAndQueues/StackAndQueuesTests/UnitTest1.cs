@@ -93,5 +93,15 @@ namespace StackAndQueuesTests
 
             Assert.Null(stack.Pop());
         }
+
+        //Peak 
+        [Fact]
+        public void CanPeakStackWithOneNode()
+        {
+            Node node = new Node(5);
+            Stack stack = new Stack(node);
+            Assert.Equal(5, stack.Peek().Value);
+        }
+            
     }
 }
