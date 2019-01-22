@@ -76,5 +76,14 @@ namespace StackAndQueuesTests
             stack.Push(7);
             Assert.Equal(7, stack.Pop().Value);
         }
+
+        [Fact]
+        public void CanPopOnlyNode()
+        {
+            Node node = new Node(5);
+            Stack stack = new Stack(node);
+
+            Assert.Equal(5, stack.Pop().Value);
+        }
     }
 }
