@@ -35,5 +35,16 @@ namespace StackAndQueuesTests
             Stack stack = new Stack(node);
             Assert.Null(stack.Top);
         }
+
+        //Push tests
+        [Fact]
+        public void CanAddNodeToEmptyStack()
+        {
+            Stack stack = new Stack();
+            Node node = new Node(5);
+            stack.Push(node);
+
+            Assert.Equal(5, stack.Top.Value);
+        }
     }
 }
