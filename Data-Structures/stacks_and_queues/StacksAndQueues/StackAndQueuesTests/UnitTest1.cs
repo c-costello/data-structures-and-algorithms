@@ -102,6 +102,18 @@ namespace StackAndQueuesTests
             Stack stack = new Stack(node);
             Assert.Equal(5, stack.Peek().Value);
         }
+
+        [Fact]
+        public void CanPeakStackWithMultipleNodes()
+        {
+            Node node = new Node(5);
+            Stack stack = new Stack(node);
+            stack.Push(6);
+            stack.Push(7);
+            stack.Push(8);
+            Assert.Equal(8, stack.Peek().Value);
+
+        }
             
     }
 }
