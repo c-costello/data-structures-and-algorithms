@@ -85,5 +85,13 @@ namespace StackAndQueuesTests
 
             Assert.Equal(5, stack.Pop().Value);
         }
+
+        [Fact]
+        public void CanPopEmptyStack()
+        {
+            Stack stack = new Stack();
+
+            Assert.Null(stack.Pop());
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace StacksAndQueues
         /// </summary>
         public Stack()
         {
-
+            Top = null;
         }
 
         /// <summary>
@@ -53,9 +53,18 @@ namespace StacksAndQueues
         /// <returns>Node</returns>
         public Node Pop()
         {
-            Node temp = Top;
-            Top = Top.Next;
-            temp.Next = null;
+            Node temp = null;
+            try
+            {
+                temp = Top;
+                Top = Top.Next;
+                temp.Next = null;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Oops! Your Stack is Empty, there's no node!");
+                return null;
+            }
             return temp;
         }
 
