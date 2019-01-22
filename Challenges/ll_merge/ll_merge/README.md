@@ -3,7 +3,7 @@
 ## Challenge
 Given two link lists, zip them together into the first link list, and return that first link list. 
 
-##Approach and Efficiency
+## Approach and Efficiency
 - Space and Time:
 	- Time: O(n) - We run through the entire link list, giving us O(n)
 	- Space: O(1) - We do not create anything new.
