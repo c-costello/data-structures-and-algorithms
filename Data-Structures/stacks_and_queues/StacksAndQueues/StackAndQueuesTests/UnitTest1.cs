@@ -46,5 +46,14 @@ namespace StackAndQueuesTests
 
             Assert.Equal(5, stack.Top.Value);
         }
+
+        [Fact]
+        public void CanAddValueToEmptyStack()
+        {
+            Stack stack = new Stack();
+            stack.Push(5);
+
+            Assert.Equal(5, stack.Top.Value);
+        }
     }
 }
