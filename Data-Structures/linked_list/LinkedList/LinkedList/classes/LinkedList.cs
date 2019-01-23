@@ -9,7 +9,10 @@ namespace LinkedList.classes
         public Node Head { get; set; }
         public Node Current { get; set; }
 
-        // insert
+        /// <summary>
+        /// Inserts a new node with the given value into the beginning of the link list
+        /// </summary>
+        /// <param name="value">an integer value that will be the value of the new node</param>
         public void Insert(int value)
         {
             Node newNode = new Node(value);
@@ -17,7 +20,12 @@ namespace LinkedList.classes
             Head = newNode;
         }
 
-        //includes
+        /// <summary>
+        /// Takes in a value and checks if any nodes in the linked list mave that value, returns a boolean
+        /// if the value is included, returns true, else returns false
+        /// </summary>
+        /// <param name="value">int value that is being check against the link list</param>
+        /// <returns>bool</returns>
         public bool Includes(int value)
         {
             Current = Head;
@@ -39,7 +47,9 @@ namespace LinkedList.classes
             }
         }
 
-        //print
+        /// <summary>
+        /// Prints out each node value in the LinkList
+        /// </summary>
         public void Print()
         {
             if (Head == null)
@@ -49,16 +59,22 @@ namespace LinkedList.classes
             else
             {
                 Current = Head;
+                Console.Write("HEAD");
                 while(Current.Next != null)
                 {
-                    Console.WriteLine(Current.Value);
+                    Console.Write($" --> {Current.Value}");
                     Current = Current.Next;
                 }
-                Console.WriteLine(Current.Value);
+                Console.Write($" --> {Current.Value}");
+                Console.WriteLine(" --> X>");
+                
             }
         }
 
-        //append
+        /// <summary>
+        /// creates a node with the given value and attaches it to the end of the link list
+        /// </summary>
+        /// <param name="value"></param>
         public void Append(int value)
         {
             if (Head == null)
@@ -74,26 +90,42 @@ namespace LinkedList.classes
             Current.Next = newNode;
         }
 
-        //insert before
+        /// <summary>
+        /// creates and inserts a new node of a given newValue BEFORE a given value
+        /// </summary>
+        /// <param name="value">the value of the node the new node will be inserted before</param>
+        /// <param name="newValue">the value of the node being created and attached</param>
         public void InsertBefore(int value, int newValue)
         {
-            Current = Head;
-            while (Current.Next != null )
+            if (Head.Next == null)
             {
-                if (Current.Next.Value == value)
+                Insert(newValue);
+            }
+            else
+            {
+                Current = Head;
+                while (Current.Next != null )
                 {
-                    Node newNode = new Node(newValue);
-                    newNode.Next = Current.Next;
-                    Current.Next = newNode;
-                    return;
-                }
-                Current = Current.Next;
+                    if (Current.Next.Value == value)
+                    {
+                        Node newNode = new Node(newValue);
+                        newNode.Next = Current.Next;
+                        Current.Next = newNode;
+                        return;
+                    }
+                    Current = Current.Next;
+                } 
+
             }
             
         }
 
 
-        //insert after
+        /// <summary>
+        /// creates and inserts a new node of a given newValue AFTER a given value
+        /// </summary>
+        /// <param name="value">the value of the node the new node will be inserted before</param>
+        /// <param name="newValue">the value of the node being created and attached</param>
         public void InsertAfter(int value, int newValue)
         {
             Current = Head;
@@ -108,6 +140,10 @@ namespace LinkedList.classes
                 }
                 Current = Current.Next;
             }
+            Node node = new Node(newValue);
+            node.Next = Current.Next;
+            Current.Next = node;
+            return;
 
         }
 

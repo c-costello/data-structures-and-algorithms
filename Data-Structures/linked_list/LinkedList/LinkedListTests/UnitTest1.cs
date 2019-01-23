@@ -23,7 +23,7 @@ namespace LinkedListTests
             Assert.Null(list.Head);
         }
 
-
+        //insert tests
         [Fact]
         public void CanInsertOneNumbers()
         {
@@ -76,6 +76,8 @@ namespace LinkedListTests
 
         }
 
+
+        //includes tests
         [Fact]
         public void CanFindIncludedNumber()
         {
@@ -113,6 +115,8 @@ namespace LinkedListTests
 
         }
 
+
+        //Append tests
         [Fact]
         public void CanAppendValueToEndOfList()
         {
@@ -132,6 +136,26 @@ namespace LinkedListTests
             int actualLastValue = list.Current.Value;
             Assert.Equal(expectedLastValue, actualLastValue);
         }
+
+        [Fact]
+        public void CanAppendToAnEmptyList()
+        {
+            LList list = new LList();
+            list.Append(5);
+            Assert.Equal(5, list.Head.Value);
+        }
+        [Fact]
+        public void CanAppendToListWithOneNode()
+        {
+            LList list = new LList();
+            list.Insert(1);
+            list.Append(5);
+            Assert.Equal(5, list.Head.Next.Value);
+
+        }
+
+
+        //InsertBefore tests
         [Fact]
         public void CanInsertValueBeforeNode()
         {
@@ -154,6 +178,28 @@ namespace LinkedListTests
 
             Assert.Equal(expectedValue, actualValue);           
         }
+
+        [Fact]
+        public void CanInsertBeforeHead()
+        {
+            LList list = new LList();
+            list.Insert(1);
+            list.InsertBefore(1, 5);
+            Assert.Equal(5, list.Head.Value);
+        }
+        [Fact]
+        public void CanInsertBeforeLastNode()
+        {
+            LList list = new LList();
+            list.Insert(4);
+            list.Insert(2);
+            list.Insert(1);
+            list.InsertBefore(4, 3);
+
+            Assert.Equal(3, list.Head.Next.Next.Value);
+        }
+
+        //Insert After tests
         [Fact]
         public void CanInsertAfterNode()
         {
@@ -176,6 +222,34 @@ namespace LinkedListTests
             }
 
             Assert.Equal(expectedValue, actualValue);
+        }
+
+        [Fact]
+        public void CanInsertAfterLastNode()
+        {
+            LList list = new LList();
+            list.Insert(3);
+            list.Insert(2);
+            list.InsertAfter(3, 4);
+            int expected = 4;
+            Node current = list.Head.Next.Next;
+            int actual = current.Value;
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void CanInsertAfterHead()
+        {
+            LList list = new LList();
+            list.Insert(3);
+            list.Insert(2);
+            list.InsertAfter(2, 4);
+            int expected = 4;
+            Node current = list.Head.Next;
+            int actual = current.Value;
+
+            Assert.Equal(expected, actual);
         }
 
     }
