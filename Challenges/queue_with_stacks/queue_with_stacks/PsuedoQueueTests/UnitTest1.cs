@@ -16,7 +16,7 @@ namespace PsuedoQueueTests
             PsuedoQueue pQ = new PsuedoQueue();
             pQ.Enqueue(5);
 
-            Assert.Equal(5, pQ.Top.Value);
+            Assert.Equal(5, pQ.Front.Value);
 
         }
         [Fact]
@@ -27,7 +27,7 @@ namespace PsuedoQueueTests
             pQ.Enqueue(6);
             pQ.Enqueue(7);
 
-            Assert.Equal(7, pQ.Top.Next.Next.Value);
+            Assert.Equal(7, pQ.Rear.Value);
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace PsuedoQueueTests
             pQ.Enqueue(5);
             pQ.Enqueue(7);
             pQ.Enqueue(9);
-            Assert.Equal(5, pQ.Top.Value);
+            Assert.Equal(5, pQ.Front.Value);
         }
 
         //Dequeue tests

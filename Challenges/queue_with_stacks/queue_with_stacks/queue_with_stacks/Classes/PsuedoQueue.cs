@@ -7,14 +7,11 @@ namespace queue_with_stacks.Classes
 {
     public class PsuedoQueue : Stack
     {
-        Node Front {get; set;}
-        Node Rear { get; set; }
+        public Node Front {get; set;}
+        public Node Rear { get; set; }
 
         public PsuedoQueue()
         {
-            Front = null;
-            Rear = null;
-            Top = null;
         }
 
         public PsuedoQueue(int value)
@@ -30,21 +27,41 @@ namespace queue_with_stacks.Classes
 
         public void Enqueue(int value)
         {
-            Stack HolderStack = new Stack();
-            while (Top != null)
+            if (Top == null)
             {
-                HolderStack.Push(Pop());
+                Push(value);
+                Front = Top;
+                Rear = Top;
             }
-            Push(value);
-            while (HolderStack.Top != null)
+            else
             {
-                Push(HolderStack.Pop());
+                Stack HolderStack = new Stack();
+                while (Top != null)
+                {
+                    Console.WriteLine("Top" + Top.Value);
+                    HolderStack.Push(Pop());
+                }
+                Node node = new Node(value);
+                Push(value);
+                Console.WriteLine("Test" + Top.Value);
+                Console.WriteLine("Other test" + Front.Value);
+                    
+                Rear = Top;
+                Console.WriteLine("Rear" + Rear.Value);
+            
+                while (HolderStack.Top != null)
+                {
+                    Push(HolderStack.Pop());
+                }
             }
         }
 
         public Node Dequeue()
         {
-            return Pop();
+            Node removed = Pop();
+            Front = Top;
+            return removed;
+        
         }
 
     }
