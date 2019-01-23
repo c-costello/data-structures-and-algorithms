@@ -27,7 +27,7 @@ namespace PsuedoQueueTests
             pQ.Enqueue(6);
             pQ.Enqueue(7);
 
-            Assert.Equal(7, pQ.Top.Next.Value);
+            Assert.Equal(7, pQ.Top.Next.Next.Value);
         }
 
         [Fact]
@@ -38,6 +38,39 @@ namespace PsuedoQueueTests
             pQ.Enqueue(7);
             pQ.Enqueue(9);
             Assert.Equal(5, pQ.Top.Value);
+        }
+
+        //Dequeue tests
+
+        [Fact]
+        public void CannotDequeueEmptyQueue()
+        {
+            PsuedoQueue pQ = new PsuedoQueue();
+
+            Assert.Null(pQ.Dequeue());
+        }
+
+        [Fact]
+        public void FirstInIsFirstOut()
+        {
+            PsuedoQueue pQ = new PsuedoQueue();
+            pQ.Enqueue(5);
+            pQ.Enqueue(7);
+            pQ.Enqueue(9);
+            Assert.Equal(5, pQ.Dequeue().Value);
+        }
+
+        [Fact]
+        public void LastInIsLastOut()
+        {
+            PsuedoQueue pQ = new PsuedoQueue();
+            pQ.Enqueue(5);
+            pQ.Enqueue(7);
+            pQ.Enqueue(9);
+            pQ.Dequeue();
+            pQ.Dequeue();
+            Assert.Equal(9, pQ.Dequeue().Value);
+
         }
     }
 }
