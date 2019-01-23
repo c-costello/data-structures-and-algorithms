@@ -10,10 +10,18 @@ namespace queue_with_stacks.Classes
         public Node Front {get; set;}
         public Node Rear { get; set; }
 
+
+        /// <summary>
+        /// Empty Constructor
+        /// </summary>
         public PsuedoQueue()
         {
         }
 
+        /// <summary>
+        /// Constructor that takes in a value
+        /// </summary>
+        /// <param name="value">Int</param>
         public PsuedoQueue(int value)
         {
             Node node = new Node(value);
@@ -24,7 +32,10 @@ namespace queue_with_stacks.Classes
         }
 
 
-
+        /// <summary>
+        /// Adds new value to the end of the queue
+        /// </summary>
+        /// <param name="value">int</param>
         public void Enqueue(int value)
         {
             if (Top == null)
@@ -56,6 +67,10 @@ namespace queue_with_stacks.Classes
             }
         }
 
+        /// <summary>
+        /// Removes and return front node
+        /// </summary>
+        /// <returns>Node</returns>
         public Node Dequeue()
         {
             Node removed = Pop();
