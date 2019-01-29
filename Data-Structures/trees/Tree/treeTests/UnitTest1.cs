@@ -6,6 +6,7 @@ namespace treeTests
 {
     public class UnitTest1
     {
+        //Add tests
         [Fact]
         public void CanAddValueToTreeWithOneNode()
         {
@@ -68,5 +69,45 @@ namespace treeTests
 
             Assert.Null(tree.Root.RightChild.LeftChild.RightChild);
         }
+
+
+        //Contains tests
+        [Fact]
+        public void CanFindRoot()
+        {
+            BinarySearchTree tree = new BinarySearchTree();
+            tree.Root = new Node<int>(50);
+
+            Assert.True(tree.Contains(tree.Root, 50));
+
+        }
+        [Fact]
+        public void CanFindChild()
+        {
+            BinarySearchTree tree = new BinarySearchTree();
+            tree.Root = new Node<int>(50);
+            tree.Add(tree.Root, 25);
+            tree.Add(tree.Root, 75);
+            tree.Add(tree.Root, 35);
+
+            Assert.True(tree.Contains(tree.Root, 25));
+            Assert.True(tree.Contains(tree.Root, 75));
+            Assert.True(tree.Contains(tree.Root, 35));
+        }
+
+        [Fact]
+        public void ReturnsFalseIfDataIsNotIncluded()
+        {
+            
+            BinarySearchTree tree = new BinarySearchTree();
+            tree.Root = new Node<int>(50);
+            tree.Add(tree.Root, 25);
+            tree.Add(tree.Root, 75);
+            tree.Add(tree.Root, 35);
+
+            Assert.False(tree.Contains(tree.Root, 15));
+        }
     }
+
+
 }
