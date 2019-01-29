@@ -3,19 +3,23 @@ using System;
 
 namespace MultiBracketValidationApp
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.WriteLine(multiBracketValidation("{}()"));
-            Console.WriteLine(multiBracketValidation("{}([])"));
-            Console.WriteLine(multiBracketValidation("{}([)"));
+            Console.WriteLine(MultiBracketValidation("{}()"));
+            Console.WriteLine(MultiBracketValidation("{}([])"));
+            Console.WriteLine(MultiBracketValidation("{}([)"));
 
         }
 
-        public static bool multiBracketValidation(string input)
+        public static bool MultiBracketValidation(string input)
         {
+            if (input == "")
+            {
+                return false;
+            }
             char[] arr = input.ToCharArray();
             Stack<char> stack = new Stack<char>();
             Stack<char> helperStack = new Stack<char>();
@@ -79,6 +83,10 @@ namespace MultiBracketValidationApp
                 {
                     stack.Pop();
                 }
+            }
+            if (helperStack.Top != null)
+            {
+                return false;
             }
             return true;        
         }
