@@ -13,7 +13,7 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanCreateEmptyStack()
         {
-            Stack stack = new Stack();
+            Stack<int> stack = new Stack<int>();
 
             Assert.Null(stack.Top);
         }
@@ -21,8 +21,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanCreateStackWithOneNode()
         {
-            Node node = new Node(5);
-            Stack stack = new Stack(node);
+            Node<int> node = new Node<int>(5);
+            Stack<int> stack = new Stack<int>(node);
 
             Assert.Equal(5, stack.Top.Value);
         }
@@ -30,9 +30,9 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanCreateStackWithNullNode()
         {
-            Node node = new Node(5);
+            Node<int> node = new Node<int>(5);
             node = null;
-            Stack stack = new Stack(node);
+            Stack<int> stack = new Stack<int>(node);
             Assert.Null(stack.Top);
         }
 
@@ -40,8 +40,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanAddNodeToEmptyStack()
         {
-            Stack stack = new Stack();
-            Node node = new Node(5);
+            Stack<int> stack = new Stack<int>();
+            Node<int> node = new Node<int>(5);
             stack.Push(node);
 
             Assert.Equal(5, stack.Top.Value);
@@ -50,7 +50,7 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanAddValueToEmptyStack()
         {
-            Stack stack = new Stack();
+            Stack<int> stack = new Stack<int>();
             stack.Push(5);
 
             Assert.Equal(5, stack.Top.Value);
@@ -59,8 +59,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanAddValueToOccupiedStack()
         {
-            Node node = new Node(5);
-            Stack stack = new Stack(node);
+            Node<int> node = new Node<int>(5);
+            Stack<int> stack = new Stack<int>(node);
             stack.Push(10);
 
             Assert.Equal(10, stack.Top.Value);
@@ -70,8 +70,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanPopNode()
         {
-            Node node = new Node(5);
-            Stack stack = new Stack(node);
+            Node<int> node = new Node<int>(5);
+            Stack<int> stack = new Stack<int>(node);
             stack.Push(6);
             stack.Push(7);
             Assert.Equal(7, stack.Pop().Value);
@@ -80,8 +80,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanPopOnlyNode()
         {
-            Node node = new Node(5);
-            Stack stack = new Stack(node);
+            Node<int> node = new Node<int>(5);
+            Stack<int> stack = new Stack<int>(node);
 
             Assert.Equal(5, stack.Pop().Value);
         }
@@ -89,7 +89,7 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanPopEmptyStack()
         {
-            Stack stack = new Stack();
+            Stack<int> stack = new Stack<int>();
 
             Assert.Null(stack.Pop());
         }
@@ -98,16 +98,16 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanPeakStackWithOneNode()
         {
-            Node node = new Node(5);
-            Stack stack = new Stack(node);
+            Node<int> node = new Node<int>(5);
+            Stack<int> stack = new Stack<int>(node);
             Assert.Equal(5, stack.Peek().Value);
         }
 
         [Fact]
         public void CanPeakStackWithMultipleNodes()
         {
-            Node node = new Node(5);
-            Stack stack = new Stack(node);
+            Node<int> node = new Node<int>(5);
+            Stack<int> stack = new Stack<int>(node);
             stack.Push(6);
             stack.Push(7);
             stack.Push(8);
@@ -117,7 +117,7 @@ namespace StackAndQueuesTests
         [Fact]
         public void EmptyStacksReturnNullWhenPeeked()
         {
-            Stack stack = new Stack();
+            Stack<int> stack = new Stack<int>();
             Assert.Null(stack.Peek());
         }
 
@@ -127,7 +127,7 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanCreateEmptyQueue()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
 
             Assert.Null(queue.Front);
         }
@@ -135,16 +135,16 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanCreateQueueWithOneNode()
         {
-            Node node = new Node(5);
-            Queue queue = new Queue(node);
+            Node<int> node = new Node<int>(5);
+            Queue<int> queue = new Queue<int>(node);
             Assert.Equal(5, queue.Front.Value);
         }
 
         [Fact]
         public void CanCreateQueueWithNullNode()
         {
-            Node node = null;
-            Queue queue = new Queue(node);
+            Node<int> node = null;
+            Queue<int> queue = new Queue<int>(node);
             Assert.Null(queue.Front);
         }
 
@@ -152,8 +152,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanAddNodeToEmptyQueue()
         {
-            Queue queue = new Queue();
-            Node node = new Node(5);
+            Queue<int> queue = new Queue<int>();
+            Node<int> node = new Node<int>(5);
             queue.Enqueue(node);
 
             Assert.Equal(5, queue.Rear.Value);
@@ -162,7 +162,7 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanAddValueToEmptyQueue()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
             queue.Enqueue(5);
             Assert.Equal(5, queue.Rear.Value);
         }
@@ -170,8 +170,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanAddValueToOccupiedQueue()
         {
-            Node node = new Node(5);
-            Queue queue = new Queue(node);
+            Node<int> node = new Node<int>(5);
+            Queue<int> queue = new Queue<int>(node);
             queue.Enqueue(10);
 
             Assert.Equal(10, queue.Rear.Value);
@@ -181,8 +181,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanDequeueFromFullQueue()
         {
-            Node node = new Node(5);
-            Queue queue = new Queue(node);
+            Node<int> node = new Node<int>(5);
+            Queue<int> queue = new Queue<int>(node);
             queue.Enqueue(6);
             queue.Enqueue(7);
             queue.Enqueue(8);
@@ -193,8 +193,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanDequeueFromQueueWithOneNode()
         {
-            Node node = new Node(5);
-            Queue queue = new Queue(node);
+            Node<int> node = new Node<int>(5);
+            Queue<int> queue = new Queue<int>(node);
 
             Assert.Equal(5, queue.Dequeue().Value);
 
@@ -203,8 +203,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanDequeueFromQueueWithOneTestTwo()
         {
-            Node node = new Node(5);
-            Queue queue = new Queue(node);
+            Node<int> node = new Node<int>(5);
+            Queue<int> queue = new Queue<int>(node);
             queue.Dequeue();
             Assert.Null(queue.Front);
         }
@@ -212,7 +212,7 @@ namespace StackAndQueuesTests
         [Fact]
         public void CannotDequeueEmptyQueue()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
             Assert.Null(queue.Dequeue());
         }
 
@@ -220,15 +220,15 @@ namespace StackAndQueuesTests
         [Fact]
         public void PeekingEmptyQueueReturnsNull()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
             Assert.Null(queue.Peek());
         }
 
         [Fact]
         public void CanPeekQueueWithOneNode()
         {
-            Node node = new Node(5);
-            Queue queue = new Queue(node);
+            Node<int> node = new Node<int>(5);
+            Queue<int> queue = new Queue<int>(node);
 
             Assert.Equal(5, queue.Peek().Value);
         }
@@ -236,8 +236,8 @@ namespace StackAndQueuesTests
         [Fact]
         public void CanPeekQueueWithMultipleNodes()
         {
-            Node node = new Node(5);
-            Queue queue = new Queue(node);
+            Node<int> node = new Node<int>(5);
+            Queue<int> queue = new Queue<int>(node);
             queue.Enqueue(6);
             queue.Enqueue(7);
             queue.Enqueue(8);

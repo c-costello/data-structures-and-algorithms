@@ -4,15 +4,15 @@ using System.Text;
 
 namespace StacksAndQueues
 {
-    public class Stack
+    public class Stack<T>
     {
-        public Node Top { get; set; }
+        public Node<T> Top { get; set; }
 
         /// <summary>
         /// Creates a stack with the given node set to Top
         /// </summary>
         /// <param name="node">Node</param>
-        public Stack(Node node)
+        public Stack(Node<T> node)
         {
             Top = node;
         }
@@ -29,9 +29,9 @@ namespace StacksAndQueues
         /// Pushes value into Stack
         /// </summary>
         /// <param name="value">int</param>
-        public void Push(int value)
+        public void Push(T value)
         {
-            Node node = new Node(value);
+            Node<T> node = new Node<T>(value);
             node.Next = Top;
             Top = node;
         }
@@ -40,7 +40,7 @@ namespace StacksAndQueues
         /// Pushes new node into Stack
         /// </summary>
         /// <param name="node">Node</param>
-        public void Push(Node node)
+        public void Push(Node<T> node)
         {
             node.Next = Top;
             Top = node;
@@ -51,9 +51,9 @@ namespace StacksAndQueues
         /// Pops the top node off of the stack, returns that node
         /// </summary>
         /// <returns>Node</returns>
-        public Node Pop()
+        public Node<T> Pop()
         {
-            Node temp = null;
+            Node<T> temp = null;
             try
             {
                 temp = Top;
@@ -73,7 +73,7 @@ namespace StacksAndQueues
         /// Returns top node
         /// </summary>
         /// <returns>Node</returns>
-        public Node Peek()
+        public Node<T> Peek()
         {
             return Top;
         }

@@ -4,17 +4,17 @@ using System.Text;
 
 namespace StacksAndQueues
 {
-    public class Queue
+    public class Queue<T>
     {
-        public Node Front { get; set; }
-        public Node Rear { get; set; }
+        public Node<T> Front { get; set; }
+        public Node<T> Rear { get; set; }
 
 
         /// <summary>
         /// Creates a queue with one node
         /// </summary>
         /// <param name="node">Node</param>
-        public Queue(Node node)
+        public Queue(Node<T> node)
         {
             Front = node;
             Rear = node;
@@ -35,9 +35,9 @@ namespace StacksAndQueues
         /// Adds new node to end of list
         /// </summary>
         /// <param name="value">Int</param>
-        public void Enqueue(int value)
+        public void Enqueue(T value)
         {
-            Node node = new Node(value);
+            Node<T> node = new Node<T>(value);
             if (Front == null)
             {
                 Front = node;
@@ -51,7 +51,7 @@ namespace StacksAndQueues
         /// Adds new node to end of list
         /// </summary>
         /// <param name="node">Node</param>
-        public void Enqueue(Node node)
+        public void Enqueue(Node<T> node)
         {
             if (Front == null)
             {
@@ -66,14 +66,14 @@ namespace StacksAndQueues
         /// Remove top node
         /// </summary>
         /// <returns>Top node</returns>
-        public Node Dequeue()
+        public Node<T> Dequeue()
         {
             if (Front == null)
             {
                 Console.WriteLine("Your Queue is Empty! There's Nothing to Dequeue!");
                 return null;
             }
-            Node temp = Front;
+            Node<T> temp = Front;
             Front = Front.Next;
             temp.Next = null;
 
@@ -81,10 +81,10 @@ namespace StacksAndQueues
         }
 
         /// <summary>
-        /// Returns front node
+        /// Returns front Node<T>
         /// </summary>
         /// <returns>Front</returns>
-        public Node Peek()
+        public Node<T> Peek()
         {
             return Front;
         }
