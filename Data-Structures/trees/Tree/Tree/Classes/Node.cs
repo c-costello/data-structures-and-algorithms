@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Tree.Classes
 {
-    class Node
+    public class Node<T>
     {
-        public int Value { get; set; }
-        public Node LeftChild { get; set; }
-        public Node RightChild { get; set; }
-        public Node(int value)
+        public T Value { get; set; }
+        public Node<T> LeftChild { get; set; }
+        public Node<T> RightChild { get; set; }
+        public Node(T value)
         {
             Value = value;
             LeftChild = null;

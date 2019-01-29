@@ -5,10 +5,10 @@ using StacksAndQueues;
 
 namespace Tree.Classes
 {
-    class BinaryTree
+    public class BinaryTree<T>
     {
 
-        public Node Root { get; set; }
+        public Node<T> Root { get; set; }
 
         public BinaryTree()
         {
@@ -16,15 +16,15 @@ namespace Tree.Classes
 
         }
 
-        public BinaryTree(Node node)
+        public BinaryTree(Node<T> node)
         {
             Root = node;
         }
     
 
-        public int[] PreOrder(Node root)
+        public T[] PreOrder(Node<T> root)
         {   
-            List<int> list = new List<int>();
+            List<T> list = new List<T>();
             list.Add(root.Value);            
             if (root.LeftChild != null)
             {
@@ -34,13 +34,13 @@ namespace Tree.Classes
             {
                 PreOrder(root.RightChild, list);
             }
-            int[] arr = list.ToArray();
+            T[] arr = list.ToArray();
             //Console.WriteLine(String.Join(" ",arr));
             return arr;
 
         }
 
-        public int[] PreOrder(Node root, List<int> list)
+        public T[] PreOrder(Node<T> root, List<T> list)
         {
             list.Add(root.Value);
             if (root.LeftChild != null)
@@ -51,15 +51,15 @@ namespace Tree.Classes
             {
                 PreOrder(root.RightChild, list);
             }
-            int[] arr = list.ToArray();
+            T[] arr = list.ToArray();
             //Console.WriteLine(String.Join(" ",arr));
             return arr;
 
         }
 
-        public int[] InOrder(Node root)
+        public T[] InOrder(Node<T> root)
         {
-            List<int> list = new List<int>();
+            List<T> list = new List<T>();
             if (root.LeftChild != null)
             {
                 InOrder(root.LeftChild, list);
@@ -69,12 +69,12 @@ namespace Tree.Classes
             {
                 InOrder(root.RightChild, list);
             }
-            int[] arr = list.ToArray();
+            T[] arr = list.ToArray();
             return arr;
 
         }
 
-        public int[] InOrder(Node root, List<int> list)
+        public T[] InOrder(Node<T> root, List<T> list)
         {
             if (root.LeftChild != null)
             {
@@ -85,16 +85,16 @@ namespace Tree.Classes
             {
                 InOrder(root.RightChild, list);
             }
-            int[] arr = list.ToArray();
+            T[] arr = list.ToArray();
             return arr;
 
         }
 
 
 
-        public int[] PostOrder(Node root)
+        public T[] PostOrder(Node<T> root)
         {
-            List<int> list = new List<int>();
+            List<T> list = new List<T>();
             if (root.LeftChild != null)
             {
                 PostOrder(root.LeftChild, list);
@@ -104,12 +104,12 @@ namespace Tree.Classes
                 PostOrder(root.RightChild, list);
             }
             list.Add(root.Value);
-            int[] arr = list.ToArray();
+            T[] arr = list.ToArray();
             return arr;
 
         }
 
-        public int[] PostOrder(Node root, List<int> list)
+        public T[] PostOrder(Node<T> root, List<T> list)
         {
             if (root.LeftChild != null)
             {
@@ -120,11 +120,11 @@ namespace Tree.Classes
                 PostOrder(root.RightChild, list);
             }
             list.Add(root.Value);
-            int[] arr = list.ToArray();
+            T[] arr = list.ToArray();
             return arr;
 
         }
-        public void InOrder2(Node root)
+        public void InOrder2(Node<T> root)
         {
             if (root.LeftChild != null)
             {
@@ -137,7 +137,7 @@ namespace Tree.Classes
             }
         }
 
-        public void PostOrder2(Node root)
+        public void PostOrder2(Node<T> root)
         {
             if (root.LeftChild != null)
             {
