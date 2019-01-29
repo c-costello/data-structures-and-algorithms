@@ -32,7 +32,19 @@ namespace fifo_animal_shelter.Classes
             Rear = animal;
         }
 
-        public Animal Dequeue(Animal pref)
+        public void Enqueue(Animal.Pet pet)
+        {
+            Animal animal = new Animal(pet);
+            if (Front == null)
+            {
+                Front = animal;
+                Rear = animal;
+            }
+            Rear.Next = animal;
+            Rear = animal;
+        }
+
+        public Animal Dequeue(Animal.Pet pref)
         {
             if (Front == null)
             {
@@ -40,7 +52,7 @@ namespace fifo_animal_shelter.Classes
                 return null;
             }
             AnimalShelter newShelter = new AnimalShelter();
-            while (Front != pref)
+            while (Front.Value != pref)
             {
                 Animal temp = Front;
                 Front = Front.Next;

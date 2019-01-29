@@ -25,8 +25,8 @@ namespace fifo_animal_shelter
             shelter.Enqueue(cat1);
             shelter.Enqueue(cat2);
 
-            Console.WriteLine(shelter.Dequeue(cat).Value);
-            Console.WriteLine(shelter.Dequeue(dog).Value);
+            Console.WriteLine(shelter.Dequeue(Animal.Pet.cat).Value);
+            Console.WriteLine(shelter.Dequeue(Animal.Pet.dog).Value);
 
             Console.WriteLine(shelter.Front.Value);
             Console.WriteLine(shelter.Front.Next.Value);
