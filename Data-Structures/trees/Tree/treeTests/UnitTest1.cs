@@ -6,6 +6,7 @@ namespace treeTests
 {
     public class UnitTest1
     {
+        //Binary Search Tests
         //Add tests
         [Fact]
         public void CanAddValueToTreeWithOneNode()
@@ -16,7 +17,6 @@ namespace treeTests
 
             Assert.Equal(25, tree.Root.LeftChild.Value);
         }
-
         [Fact]
         public void CanAddSecondValue()
         {
@@ -26,7 +26,6 @@ namespace treeTests
             tree.Add(tree.Root, 75);
             Assert.Equal(75, tree.Root.RightChild.Value);
         }
-
         [Fact]
         public void CanAdd35()
         {
@@ -39,7 +38,6 @@ namespace treeTests
             Assert.Equal(35, tree.Root.LeftChild.RightChild.Value);
 
         }
-
         [Fact]
         public void CanAdd65()
         {
@@ -54,7 +52,6 @@ namespace treeTests
             Assert.Equal(65, tree.Root.RightChild.LeftChild.Value);
 
         }
-
         [Fact]
         public void DoesNotAddRepeatNumbers()
         {
@@ -94,7 +91,6 @@ namespace treeTests
             Assert.True(tree.Contains(tree.Root, 75));
             Assert.True(tree.Contains(tree.Root, 35));
         }
-
         [Fact]
         public void ReturnsFalseIfDataIsNotIncluded()
         {
@@ -107,6 +103,7 @@ namespace treeTests
 
             Assert.False(tree.Contains(tree.Root, 15));
         }
+
     }
 
 
