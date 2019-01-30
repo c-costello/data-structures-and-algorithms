@@ -10,8 +10,7 @@ namespace Tree.Classes
 
 
         public void Add(Node<int> root, int value)
-        {
-            
+        {            
             if (value < root.Value)
             {
                 if (root.LeftChild == null)
@@ -21,10 +20,8 @@ namespace Tree.Classes
                 else
                 {
                     Add(root.LeftChild, value);
-                }
-                
+                }                
             }
-
             if (value > root.Value)
             {
                 if (root.RightChild == null)
@@ -35,9 +32,41 @@ namespace Tree.Classes
                 {
                     Add(root.RightChild, value);
                 }
-
             }
+        }
+        public bool Contains(Node<int> root, int value)
+        {
+            if (value == root.Value)
+            {
+                return true;
+            }
+            while (root.Value != value)
+            {
+                if (value < root.Value)
+                {   
+                    if (root.LeftChild == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        root = root.LeftChild;
+                    }
 
+                }            
+                else if (value > root.Value)
+                {
+                    if (root.RightChild == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        root = root.RightChild;
+                    }
+                }
+            }
+            return true;
         }
     }
 }
