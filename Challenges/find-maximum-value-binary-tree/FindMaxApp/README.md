@@ -11,8 +11,9 @@ Given a Binary Tree, navigate through the tree, find the maximum value of the no
 	- Create the method GetMaximumValue that takes in a tree. Overload the method so it can also take in a root and the max value.
 	- Define int maxValue to be the minimum possible value, in case there are negative numbers.
 	- If the root of the tree is greater than the maxValue, set maxValue equal to the value of root.
-	- Using recursion, traverse through each node, checking maxValue against the nodes value.
+	- Using recursion, and passing it the MaxValue, traverse through each node, checking maxValue against the nodes value and returning the MaxValue.
 	- Return the max value
+
 
 
 ## Solution
