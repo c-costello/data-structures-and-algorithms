@@ -48,8 +48,7 @@ namespace BinaryTreeHeightTest
             tree.Root.RightChild.RightChild = new Node<int>(7);
             tree.Root.RightChild.RightChild.RightChild = new Node<int>(8);
             tree.Root.RightChild.RightChild.RightChild.RightChild = new Node<int>(9);
-            tree.Root.RightChild.RightChild.RightChild.RightChild.RightChild = new Node<int>(10);
-            tree.Root.RightChild.RightChild.RightChild.RightChild.RightChild.RightChild = new Node<int>(11);
+            tree.Root.RightChild.RightChild.RightChild.RightChild.RightChild = new Node<int>(10);            tree.Root.RightChild.RightChild.RightChild.RightChild.RightChild.LeftChild = new Node<int>(11);
             Assert.Equal(6, Program.CalculateBinaryTreeHeight(tree.Root));
         }
         [Fact]
