@@ -27,6 +27,10 @@ namespace hashtablesApp.Classes
         /// <returns>string value</returns>
         public string Get(string key)
         {
+            if (Contains(key) == false)
+            {
+                return null;
+            }
             int index = Hash(key);
             KeyValuePair keyValuePair = Array[index];
             return keyValuePair.Value;
@@ -39,14 +43,15 @@ namespace hashtablesApp.Classes
         public bool Contains(string key)
         {
             int index = Hash(key);
-            if (Array[index].Key == key)
-            {
-                return true;
-            }
-            else
+            if (Array[index] == null)
             {
                 return false;
             }
+            if(Array[index].Key == key)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>

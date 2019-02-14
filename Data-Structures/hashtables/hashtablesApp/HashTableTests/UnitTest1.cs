@@ -22,6 +22,7 @@ namespace HashTableTests
 
             Assert.Equal("dog", hashtable.Array[22].Value);
         }
+        //Get Tests
 
         [Fact]
         public void CanGetKeyValue()
@@ -33,6 +34,16 @@ namespace HashTableTests
         }
 
         [Fact]
+        public void ReturnsNullIfKeyDoesNotExist()
+        {
+            hashtablesApp.Classes.Hashtable hashtable = new hashtablesApp.Classes.Hashtable();
+
+            Assert.Null(hashtable.Get("zeus"));
+
+        }
+
+        //Contains Tests
+        [Fact]
         public void ContainsReturnsTrueIfKeyExists()
         {
             hashtablesApp.Classes.Hashtable hashtable = new hashtablesApp.Classes.Hashtable();
@@ -40,6 +51,14 @@ namespace HashTableTests
             hashtable.Add("zeus", "dog");
 
             Assert.True(hashtable.Contains("zeus"));
+        }
+
+        [Fact]
+        public void ContainsReturnsFalseIfKeyDoesNotExist()
+        {
+            hashtablesApp.Classes.Hashtable hashtable = new hashtablesApp.Classes.Hashtable();
+
+            Assert.False(hashtable.Contains("zeus"));
         }
     }
 }
