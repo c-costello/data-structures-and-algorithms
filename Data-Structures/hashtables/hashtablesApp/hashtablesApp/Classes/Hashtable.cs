@@ -39,7 +39,7 @@ namespace hashtablesApp.Classes
         public bool Contains(string key)
         {
             int index = Hash(key);
-            if (Array[index].Key != key)
+            if (Array[index].Key == key)
             {
                 return true;
             }

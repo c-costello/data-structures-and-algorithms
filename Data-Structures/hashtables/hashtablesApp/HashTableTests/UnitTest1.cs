@@ -31,5 +31,15 @@ namespace HashTableTests
             hashtable.Add("zeus", "dog");
             Assert.Equal("dog", hashtable.Get("zeus"));
         }
+
+        [Fact]
+        public void ContainsReturnsTrueIfKeyExists()
+        {
+            hashtablesApp.Classes.Hashtable hashtable = new hashtablesApp.Classes.Hashtable();
+
+            hashtable.Add("zeus", "dog");
+
+            Assert.True(hashtable.Contains("zeus"));
+        }
     }
 }
