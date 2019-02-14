@@ -6,8 +6,10 @@ namespace hashtablesApp.Classes
 {
     public class Hashtable
     {
+        //Properties
         public Node[] Array {get; set;} 
         
+        //Methods
         /// <summary>
         /// Given a key and value, creates a key value pair, hashes the key, and inserts the key into the Hashtable
         /// </summary>
@@ -122,11 +124,19 @@ namespace hashtablesApp.Classes
             return index;
         }
 
+
+        //Constructors
+        /// <summary>
+        /// Creates a hashtable of a specified length
+        /// </summary>
+        /// <param name="length">int</param>
         public Hashtable(int length)
         {
             Array = new Node[length];
         }
-
+        /// <summary>
+        /// Creates a hashtable of a default length, 599;
+        /// </summary>
         public Hashtable()
         {
             Array = new Node[599];
