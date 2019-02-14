@@ -10,7 +10,12 @@ namespace hashtablesApp
             Hashtable hashtable = new Hashtable(5);
 
             Console.WriteLine(hashtable.Hash("zeus"));
-            Console.WriteLine(hashtable.Hash("daisy"));
+            Console.WriteLine(hashtable.Hash("gill"));
+            hashtable.Add("zeus", "dog");
+            hashtable.Add("gill", "cat");
+            Console.WriteLine(hashtable.Get("gill"));
+            Console.WriteLine(hashtable.Get("zeus"));
+
             Console.ReadLine();
 
         }

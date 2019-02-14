@@ -6,7 +6,7 @@ namespace hashtablesApp.Classes
 {
     public class Hashtable
     {
-        public KeyValuePair[] Array {get; set;} 
+        public Node[] Array {get; set;} 
         
         /// <summary>
         /// Given a key and value, creates a key value pair, hashes the key, and inserts the key into the Hashtable
@@ -18,7 +18,19 @@ namespace hashtablesApp.Classes
             KeyValuePair keyValuePair = new KeyValuePair(key, value);
             int index = Hash(key);
             keyValuePair.Index = index;
-            Array[index] = keyValuePair;
+            if (Array[index] == null)
+            {
+                Array[index] = new Node(keyValuePair);
+            }
+            if (Array[index] != null)
+            {
+                Node Current = Array[index];
+                while (Current.Next != null)
+                {
+                    Current = Current.Next;
+                }
+                Current.Next = new Node(keyValuePair);
+            }
         }
         /// <summary>
         /// Given a Key, hashes the key, retreives the corresponding Value 
@@ -32,7 +44,27 @@ namespace hashtablesApp.Classes
                 return null;
             }
             int index = Hash(key);
-            KeyValuePair keyValuePair = Array[index];
+            KeyValuePair keyValuePair = new KeyValuePair();
+            if (Array[index].Next == null)
+            {
+                keyValuePair = Array[index].Value;
+            }
+            if (Array[index].Next != null)
+            {
+                Node Current = Array[index];
+                while (Current.Next != null)
+                {
+                    if (Current.Value.Key == key)
+                    {
+                        keyValuePair = Current.Value;
+                    }
+                    Current = Current.Next;
+                }
+                if (Current.Value.Key == key)
+                {
+                    keyValuePair = Current.Value;
+                }
+            }
             return keyValuePair.Value;
         }
         /// <summary>
@@ -47,11 +79,31 @@ namespace hashtablesApp.Classes
             {
                 return false;
             }
-            if(Array[index].Key == key)
+            if (Array[index].Next == null)
             {
-                return true;
+                if(Array[index].Value.Key == key)
+                {
+                    return true;
+                }
             }
-            return false;
+            if (Array[index].Next != null)
+            {
+                Node Current = Array[index];
+                while (Current.Next != null)
+                {
+                    if (Current.Value.Key == key)
+                    {
+                        return true;
+                    }
+
+                    Current = Current.Next;
+                }
+                if (Current.Value.Key == key)
+                {
+                    return true;
+                }
+            }
+                return false;
         }
 
         /// <summary>
@@ -72,12 +124,12 @@ namespace hashtablesApp.Classes
 
         public Hashtable(int length)
         {
-            Array = new KeyValuePair[length];
+            Array = new Node[length];
         }
 
         public Hashtable()
         {
-            Array = new KeyValuePair[599];
+            Array = new Node[599];
         }
     }
 }

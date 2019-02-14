@@ -28,7 +28,7 @@ namespace HashTableTests
 
             hashtable.Add("zeus", "dog");
 
-            Assert.Equal("dog", hashtable.Array[22].Value);
+            Assert.Equal("dog", hashtable.Array[22].Value.Value);
         }
 
         [Fact]
@@ -37,6 +37,9 @@ namespace HashTableTests
             hashtablesApp.Classes.Hashtable hashtable = new hashtablesApp.Classes.Hashtable(5);
 
             hashtable.Add("zeus", "dog");
+            hashtable.Add("gill", "cat");
+            //both have an index of zero
+            Assert.Equal("catdog", hashtable.Get("gill")+hashtable.Get("zeus"));
 
 
         }

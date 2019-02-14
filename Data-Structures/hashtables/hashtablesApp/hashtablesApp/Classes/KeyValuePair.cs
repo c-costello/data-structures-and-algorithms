@@ -17,5 +17,10 @@ namespace hashtablesApp.Classes
             Value = value;
             Pair = $"{key} : {value}";
         }
+
+        public KeyValuePair()
+        {
+
+        }
     }
 }
