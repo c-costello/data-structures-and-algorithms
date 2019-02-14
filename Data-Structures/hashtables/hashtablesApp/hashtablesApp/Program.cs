@@ -13,6 +13,7 @@ namespace hashtablesApp
             Console.WriteLine(hashtable.Hash("gill"));
             hashtable.Add("zeus", "dog");
             hashtable.Add("gill", "cat");
+            Console.WriteLine(hashtable.Array[0].Next.Next.Value.Value);
             Console.WriteLine(hashtable.Get("gill"));
             Console.WriteLine(hashtable.Get("zeus"));
 

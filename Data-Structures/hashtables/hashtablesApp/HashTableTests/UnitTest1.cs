@@ -32,14 +32,14 @@ namespace HashTableTests
         }
 
         [Fact]
-        public void CanHandleCollisions()
+        public void CanAddPairsIntoSameBucket()
         {
             hashtablesApp.Classes.Hashtable hashtable = new hashtablesApp.Classes.Hashtable(5);
 
             hashtable.Add("zeus", "dog");
             hashtable.Add("gill", "cat");
             //both have an index of zero
-            Assert.Equal("catdog", hashtable.Get("gill")+hashtable.Get("zeus"));
+            Assert.Equal("cat", hashtable.Array[0].Next.Next.Value.Value);
 
 
         }
@@ -52,6 +52,16 @@ namespace HashTableTests
 
             hashtable.Add("zeus", "dog");
             Assert.Equal("dog", hashtable.Get("zeus"));
+        }
+
+        [Fact]
+        public void CanGetValueOutOfBucketWithMultiplePairs()
+        {
+            hashtablesApp.Classes.Hashtable hashtable = new hashtablesApp.Classes.Hashtable();
+
+            hashtable.Add("zeus", "dog");
+            hashtable.Add("gill", "cat");
+            Assert.Equal("cat", hashtable.Get("gill"));
         }
 
         [Fact]
@@ -72,6 +82,17 @@ namespace HashTableTests
             hashtable.Add("zeus", "dog");
 
             Assert.True(hashtable.Contains("zeus"));
+        }
+
+        [Fact]
+        public void ContainReturnsTrueAfterCollision()
+        {
+            hashtablesApp.Classes.Hashtable hashtable = new hashtablesApp.Classes.Hashtable(5);
+
+            hashtable.Add("zeus", "dog");
+            hashtable.Add("gill", "cat");
+
+            Assert.True(hashtable.Contains("gill"));
         }
 
         [Fact]
