@@ -66,8 +66,13 @@ namespace hashtablesApp.Classes
             {
                 index += Convert.ToInt32(key[0]) * (i + 1);
             }
-            index = index % 599;
+            index = index % Array.Length;
             return index;
+        }
+
+        public Hashtable(int length)
+        {
+            Array = new KeyValuePair[length];
         }
 
         public Hashtable()

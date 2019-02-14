@@ -1,4 +1,5 @@
-﻿using System;
+﻿using hashtablesApp.Classes;
+using System;
 
 namespace hashtablesApp
 {
@@ -6,7 +7,12 @@ namespace hashtablesApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Hashtable hashtable = new Hashtable(5);
+
+            Console.WriteLine(hashtable.Hash("zeus"));
+            Console.WriteLine(hashtable.Hash("daisy"));
+            Console.ReadLine();
+
         }
     }
 }

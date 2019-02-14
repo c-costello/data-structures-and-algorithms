@@ -5,6 +5,7 @@ namespace HashTableTests
 {
     public class UnitTest1
     {
+        //Hash tests
         [Fact]
         public void CanHashKey()
         {
@@ -12,7 +13,14 @@ namespace HashTableTests
             
             Assert.Equal(22, hashtable.Hash("zeus"));
         }
+        [Fact]
+        public void DifferentKeysReturnDifferentIndexes()
+        {
+            hashtablesApp.Classes.Hashtable hashtable = new hashtablesApp.Classes.Hashtable();
+            Assert.True(hashtable.Hash("zeus") != hashtable.Hash("daisy"));
+        }
 
+        //Add tests
         [Fact]
         public void CanAddKeyValue()
         {
@@ -21,6 +29,16 @@ namespace HashTableTests
             hashtable.Add("zeus", "dog");
 
             Assert.Equal("dog", hashtable.Array[22].Value);
+        }
+
+        [Fact]
+        public void CanHandleCollisions()
+        {
+            hashtablesApp.Classes.Hashtable hashtable = new hashtablesApp.Classes.Hashtable(5);
+
+            hashtable.Add("zeus", "dog");
+
+
         }
         //Get Tests
 
