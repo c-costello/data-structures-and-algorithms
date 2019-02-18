@@ -20,15 +20,13 @@ namespace RepeatedWordApp
         /// <returns>string</returns>
         public static string RepeatedWord(string str)
         {
-            string[] arr = str.Split(" ");
+            char[] charArr = { ';', ',', ' ', '/', '.', ':' };
+            string[] arr = str.Split(charArr);
 
             Hashtable hashtable = new Hashtable();
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i].EndsWith(',') || arr[i].EndsWith('.') || arr[i].EndsWith(';') || arr[i].EndsWith(':'))
-                {
-                    arr[i] = arr[i].Split(arr[i][arr[i].Length-1])[0];
-                }
+
                 if (hashtable.Contains(arr[i].ToLower()))
                 {
                     return arr[i].ToLower();
