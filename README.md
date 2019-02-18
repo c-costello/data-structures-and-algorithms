@@ -10,7 +10,8 @@
 10. [Data Structure: Stacks and Queues](Data-Structures/stacks_and_queues)
 11. [Challenge: Queue with Stacks](Challenges/queue_with_stacks)
 
-??. [Data Structure: HashTables](Data-Structures/hashtables)
+24 [Challenge: Insertion Sort](Challenges/insertion_sort)
+25. [Data Structure: HashTables](Data-Structures/hashtables)
 
 - SnowDay [Challenge: Is Ancestor](Challenges/IsAncestor)
 - SnowDay [Challenge: Find Height of a Binary Tree](Challenges/BinaryTreeHeight)
