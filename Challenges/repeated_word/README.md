@@ -17,3 +17,4 @@ Write a method that takes in a string, and returns the first duplicated word.
 	- If no repeats are found, return an empty string
 
 ## Solution
+![whiteboard solution](Assets/whiteboard_26.jpg)
