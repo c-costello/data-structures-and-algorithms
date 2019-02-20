@@ -13,6 +13,7 @@
 24 [Challenge: Insertion Sort](Challenges/insertion_sort)
 25. [Data Structure: HashTables](Data-Structures/hashtables)
 26. [Challenge: Repeated Word](Challenges/repeated_word)
+27. [Challenge: Tree Intersection](Challenges/tree_intersection)
 
 - SnowDay [Challenge: Is Ancestor](Challenges/IsAncestor)
 - SnowDay [Challenge: Find Height of a Binary Tree](Challenges/BinaryTreeHeight)
