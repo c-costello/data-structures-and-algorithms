@@ -6,14 +6,30 @@ using Tree.Classes;
 
 namespace TreeIntersectionApp
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BinaryTree<int> tree1 = new BinaryTree<int>();
+            BinaryTree<int> tree2 = new BinaryTree<int>();
+
+            tree1.Root = new Tree.Classes.Node<int>(1);
+            tree1.Root.LeftChild = new Tree.Classes.Node<int>(2);
+            tree1.Root.RightChild = new Tree.Classes.Node<int>(3);
+
+            tree2.Root = new Tree.Classes.Node<int>(5);
+            tree2.Root.LeftChild = new Tree.Classes.Node<int>(2);
+            tree2.Root.RightChild = new Tree.Classes.Node<int>(3);
+
+            Console.WriteLine(String.Join(" ->", TreeIntersection(tree1, tree2)));
         }
         public static int[] TreeIntersection(BinaryTree<int> tree1, BinaryTree<int> tree2)
         {
+            if (tree1.Root == null || tree2.Root == null)
+            {
+                int[] emptyArray = new int[0];
+                return emptyArray;
+            }
             Hashtable hashtable = new Hashtable();
             List<int> list = new List<int>();
             StacksAndQueues.Queue<Tree.Classes.Node<int>> queue = new StacksAndQueues.Queue<Tree.Classes.Node<int>>();
