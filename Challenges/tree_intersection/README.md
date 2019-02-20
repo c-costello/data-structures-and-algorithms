@@ -13,4 +13,4 @@ Write a function called tree_intersection that takes two binary tree parameters.
 	- Convert the list to an array and return it. 
 
 ## Solution:
-![whiteboard](Assets/whiteboard_27.jpg)
+![whiteboard](../../Assets/whiteboard_27.jpg)
