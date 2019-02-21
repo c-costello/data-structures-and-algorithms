@@ -23,6 +23,12 @@ namespace TreeIntersectionApp
 
             Console.WriteLine(String.Join(" ->", TreeIntersection(tree1, tree2)));
         }
+        /// <summary>
+        /// Takes in two trees, returns an array of values shared by both trees.
+        /// </summary>
+        /// <param name="tree1">BinaryTree</param>
+        /// <param name="tree2">BinaryTree</param>
+        /// <returns>int array of shared values</returns>
         public static int[] TreeIntersection(BinaryTree<int> tree1, BinaryTree<int> tree2)
         {
             if (tree1.Root == null || tree2.Root == null)
