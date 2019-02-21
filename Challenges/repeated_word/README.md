@@ -13,7 +13,7 @@ Write a method that takes in a string, and returns the first duplicated word.
 	- Iterate through the array
 	- At each indices, check if the hashtable contains the index as a key.
 	- If if it does, return that string
-	- Else, ass the string to the hash table
+	- Else, add the string to the hash table
 	- If no repeats are found, return an empty string
 
 ## Solution
