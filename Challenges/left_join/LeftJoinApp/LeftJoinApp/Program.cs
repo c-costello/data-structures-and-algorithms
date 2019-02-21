@@ -4,13 +4,19 @@ using System.Collections.Generic;
 
 namespace LeftJoinApp
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
         }
-        public List<string[]> LeftJoin(Hashtable table1, Hashtable table2)
+        /// <summary>
+        /// Takes in two HashTables, and LeftJoins them.
+        /// </summary>
+        /// <param name="table1">Hashtable</param>
+        /// <param name="table2">Hashtable</param>
+        /// <returns>A list of string arrays</returns>
+        public static List<string[]> LeftJoin(Hashtable table1, Hashtable table2)
         {
             List<string[]> list = new List<string[]>();
             for (int i = 0; i < table1.Array.Length; i++)

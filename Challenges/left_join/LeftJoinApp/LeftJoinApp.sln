@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeftJoinApp", "LeftJoinApp\LeftJoinApp.csproj", "{C2150864-CFE2-4E09-8731-072591E55BD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeftJoinTests", "LeftJoinTests\LeftJoinTests.csproj", "{6992D8D5-7F13-4CF7-8D5C-5453BEF3D4F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C2150864-CFE2-4E09-8731-072591E55BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2150864-CFE2-4E09-8731-072591E55BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2150864-CFE2-4E09-8731-072591E55BD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6992D8D5-7F13-4CF7-8D5C-5453BEF3D4F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6992D8D5-7F13-4CF7-8D5C-5453BEF3D4F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6992D8D5-7F13-4CF7-8D5C-5453BEF3D4F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6992D8D5-7F13-4CF7-8D5C-5453BEF3D4F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
