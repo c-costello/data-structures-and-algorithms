@@ -9,13 +9,13 @@
 08. [Challenge: Link List Merge](Challenges/ll_merge)
 10. [Data Structure: Stacks and Queues](Data-Structures/stacks_and_queues)
 11. [Challenge: Queue with Stacks](Challenges/queue_with_stacks)
-
 24 [Challenge: Insertion Sort](Challenges/insertion_sort)  
 25. [Data Structure: HashTables](Data-Structures/hashtables)  
 26. [Challenge: Repeated Word](Challenges/repeated_word)  
 27. [Challenge: Tree Intersection](Challenges/tree_intersection)  
 28. [Challenge: Tree Intersection](Challenges/left_join)  
-
+29 [Data Structure: Graphs](Data-Structures/graphs)
+30 [Challenge: Extra Credit 2 - No Duplicates](Challenges/unique_characters)
 - SnowDay [Challenge: Is Ancestor](Challenges/IsAncestor)
 - SnowDay [Challenge: Find Height of a Binary Tree](Challenges/BinaryTreeHeight)
 - SnowDay [Challenge: Remove Duplicates from LinkList](Challenges/linklist_duplicates)
